@@ -209,6 +209,11 @@ h6 {
   font-weight: 700;
   opacity: 0.25;
 }
+@media (max-width: 47.99875em) {
+  .nav-video__screen span {
+    display: none;
+  }
+}
 .nav-video__icon {
   opacity: 1;
   width: 35px;

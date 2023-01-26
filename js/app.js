@@ -5021,7 +5021,6 @@
         const tel = document.querySelector(".input_tel");
         if (mask) window.addEventListener("load", (function(e) {
             mask.classList.remove("_active");
-            console.log(2345);
         }));
         if (tel) {
             tel.onfocus = () => {
@@ -5034,61 +5033,6 @@
                 }
             }));
         }
-        const videosBlock = document.querySelectorAll(".acquaintance__video");
-        if (videosBlock.length) videosBlock.forEach((el => {
-            const range = el.querySelector("input");
-            const video = el.querySelector("video");
-            const play = el.querySelector(".acquaintance__play");
-            const pause = el.querySelector(".acquaintance__pause");
-            const full = el.querySelector(".nav-video__screen");
-            const time = el.querySelector(".nav-video__time");
-            if (isMobile.any()) el.addEventListener("click", (function(e) {
-                if (video.currentTime > 0) {
-                    el.classList.add("_active");
-                    setTimeout((() => {
-                        el.classList.remove("_active");
-                    }), 2e3);
-                }
-            }));
-            el.addEventListener("mouseout", (function(e) {
-                if (!video.paused) pause.classList.remove("_active");
-                el.classList.remove("_active");
-            }));
-            el.addEventListener("mouseover", (function(e) {
-                el.classList.add("_active");
-                if (!video.paused) pause.classList.add("_active");
-            }));
-            range.addEventListener("input", (function(e) {
-                console.log(23);
-                let value = range.value / 100;
-                video.currentTime = video.duration * value;
-            }));
-            video.addEventListener("timeupdate", (function(e) {
-                range.value = video.currentTime / video.duration * 100;
-                let seconds = Math.round(video.currentTime) % 60;
-                let minutes = Math.trunc(Math.round(video.currentTime) / 60);
-                if (seconds < 10) seconds = "0" + seconds;
-                if (minutes < 10) minutes = "0" + minutes;
-                time.textContent = minutes + ":" + seconds;
-            }));
-            full.addEventListener("click", (function(e) {
-                video.requestFullscreen();
-            }));
-            play.addEventListener("click", (function(e) {
-                video.play();
-                play.classList.remove("_active");
-                pause.classList.add("_active");
-                setTimeout((() => {
-                    pause.classList.remove("_active");
-                }), 2e3);
-            }));
-            pause.addEventListener("click", (function(e) {
-                video.pause();
-                pause.classList.remove("_active");
-                play.classList.add("_active");
-                el.classList.add("_active");
-            }));
-        }));
         window["FLS"] = true;
         isWebp();
         addTouchClass();

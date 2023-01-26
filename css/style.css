@@ -581,6 +581,7 @@ h6 {
   position: absolute;
   bottom: 3.125rem;
   left: 50%;
+  z-index: 100;
   transform: translate(-50%, 0);
   transition: 0.4s;
   font-weight: 700;
@@ -866,14 +867,14 @@ h6 {
   }
 }
 @media (max-width: 31.25em) {
-  @supports (left: clamp( -28.125rem , -30.0857843137rem  +  9.8039215686vw , -21.875rem )) {
+  @supports (left: clamp( -27.5rem , -29.2647058824rem  +  8.8235294118vw , -21.875rem )) {
     .right-main__image:last-child {
-      left: clamp( -28.125rem , -30.0857843137rem  +  9.8039215686vw , -21.875rem );
+      left: clamp( -27.5rem , -29.2647058824rem  +  8.8235294118vw , -21.875rem );
     }
   }
-  @supports not (left: clamp( -28.125rem , -30.0857843137rem  +  9.8039215686vw , -21.875rem )) {
+  @supports not (left: clamp( -27.5rem , -29.2647058824rem  +  8.8235294118vw , -21.875rem )) {
     .right-main__image:last-child {
-      left: calc(-28.125rem + 6.25 * (100vw - 20rem) / 63.75);
+      left: calc(-27.5rem + 5.625 * (100vw - 20rem) / 63.75);
     }
   }
 }
@@ -1485,6 +1486,7 @@ h6 {
   font-weight: 700;
   padding: 2.125rem;
   width: 100%;
+  -webkit-appearance: none;
   background: rgba(255, 255, 255, 0.02);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05), inset 0px 0px 10px rgba(255, 255, 255, 0.25);
   border-radius: 50px;
@@ -1667,7 +1669,7 @@ h6 {
 }
 @media (max-width: 47.99875em) {
   .thumbs-slide__image {
-    padding-bottom: 80%;
+    padding-bottom: 60%;
   }
 }
 .thumbs-slide__image img {

@@ -1403,6 +1403,11 @@ h6 {
   color: #2f80ed;
   font-weight: 700;
 }
+@media (max-width: 61.99875em) {
+  .surprise__course .course__bottom {
+    text-align: center;
+  }
+}
 
 .top-course__row {
   background: linear-gradient(90deg, #8effbd 0%, #6302ff 100%);

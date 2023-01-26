@@ -213,6 +213,9 @@ h6 {
   .nav-video__screen span {
     display: none;
   }
+  .nav-video__screen span.nav-video__icon {
+    display: block;
+  }
 }
 .nav-video__icon {
   opacity: 1;

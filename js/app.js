@@ -5019,7 +5019,7 @@
         da.init();
         const mask = document.querySelector(".mask");
         const tel = document.querySelector(".input_tel");
-        if (mask) window.addEventListener("DOMContentLoaded", (function(e) {
+        if (mask) window.addEventListener("load", (function(e) {
             mask.classList.remove("_active");
             console.log(2345);
         }));

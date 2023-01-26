@@ -5017,6 +5017,22 @@
         };
         const da = new DynamicAdapt("max");
         da.init();
+        const mask = document.querySelector(".mack");
+        const tel = document.querySelector(".input_tel");
+        if (mask) window.addEventListener("load", (function(e) {
+            mask.classList.add("_active");
+        }));
+        if (tel) {
+            tel.onfocus = () => {
+                if ("" == tel.value) tel.value = "+7";
+            };
+            tel.addEventListener("focusout", (function(e) {
+                if ("+7" == tel.value) {
+                    console.log(4);
+                    tel.value = "";
+                }
+            }));
+        }
         const videosBlock = document.querySelectorAll(".acquaintance__video");
         if (videosBlock.length) videosBlock.forEach((el => {
             const range = el.querySelector("input");

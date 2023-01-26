@@ -248,6 +248,9 @@ h6 {
   opacity: 1;
   visibility: visible;
 }
+.mask img {
+  max-width: 100%;
+}
 
 .header {
   position: absolute;
@@ -616,7 +619,7 @@ h6 {
 }
 @media (max-width: 47.99875em) {
   .left-main {
-    padding-top: 18.75rem;
+    padding-top: 16.5625rem;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -767,6 +770,12 @@ h6 {
     margin-top: -50px;
   }
 }
+@media (max-width: 61.99875em) {
+  .right-main__image:first-child {
+    position: relative;
+    z-index: 10;
+  }
+}
 .right-main__image img {
   display: block;
   max-width: 100%;
@@ -778,6 +787,9 @@ h6 {
   }
 }
 @media (max-width: 31.25em) {
+  .right-main__image img {
+    margin-left: 3.75rem;
+  }
   @supports (min-width: clamp( 34.375rem , 28.4926470588rem  +  29.4117647059vw , 53.125rem )) {
     .right-main__image img {
       min-width: clamp( 34.375rem , 28.4926470588rem  +  29.4117647059vw , 53.125rem );
@@ -831,15 +843,8 @@ h6 {
   }
 }
 @media (max-width: 31.25em) {
-  @supports (min-width: clamp( 25rem , 16.1764705882rem  +  44.1176470588vw , 53.125rem )) {
-    .right-main__image:last-child img {
-      min-width: clamp( 25rem , 16.1764705882rem  +  44.1176470588vw , 53.125rem );
-    }
-  }
-  @supports not (min-width: clamp( 25rem , 16.1764705882rem  +  44.1176470588vw , 53.125rem )) {
-    .right-main__image:last-child img {
-      min-width: calc(25rem + 28.125 * (100vw - 20rem) / 63.75);
-    }
+  .right-main__image:last-child img {
+    min-width: 400px;
   }
 }
 @media (max-width: 83.75em) {
@@ -861,14 +866,14 @@ h6 {
   }
 }
 @media (max-width: 31.25em) {
-  @supports (left: clamp( -21.875rem , -22.8553921569rem  +  4.9019607843vw , -18.75rem )) {
+  @supports (left: clamp( -28.125rem , -30.0857843137rem  +  9.8039215686vw , -21.875rem )) {
     .right-main__image:last-child {
-      left: clamp( -21.875rem , -22.8553921569rem  +  4.9019607843vw , -18.75rem );
+      left: clamp( -28.125rem , -30.0857843137rem  +  9.8039215686vw , -21.875rem );
     }
   }
-  @supports not (left: clamp( -21.875rem , -22.8553921569rem  +  4.9019607843vw , -18.75rem )) {
+  @supports not (left: clamp( -28.125rem , -30.0857843137rem  +  9.8039215686vw , -21.875rem )) {
     .right-main__image:last-child {
-      left: calc(-21.875rem + 3.125 * (100vw - 20rem) / 63.75);
+      left: calc(-28.125rem + 6.25 * (100vw - 20rem) / 63.75);
     }
   }
 }
@@ -1601,6 +1606,15 @@ h6 {
   min-height: 412px;
   position: relative;
   overflow: hidden;
+  border-radius: 50px;
+}
+@media (max-width: 29.99875em) {
+  .acquaintance__video {
+    max-height: 250px;
+    min-height: 250px;
+  }
+}
+.acquaintance__video video {
   border-radius: 50px;
 }
 .acquaintance__video video,
